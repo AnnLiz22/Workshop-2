@@ -2,17 +2,11 @@ package pl.coderslab.dao;
 
 public class UserDao {
 
-    //dodawanie użytkownika,
-    //zmiana danych,
-    //pobieranie po id,
-    //usuwanie po id,
-    //pobieranie wszystkich użytkowników.
-
-    private static final String QUERY_ADD_USER = "";
-    private static final String QUERY_ALTER_DATA = "";
-    private static final String QUERY_SELECT_BY_ID = "";
-    private static final String QUERY_DELETE_BY_ID = "";
-    private static final String QUERY_SELECT_ALL = "";
+    private static final String QUERY_ADD_USER = "INSERT INTO users (id, email, username, password) VALUES (?, ?, ?, ?);";
+    private static final String QUERY_ALTER_DATA = "Update users SET email=?, username=?, password=? where id=?;";
+    private static final String QUERY_SELECT_BY_ID = "SELECT * FROM users WHERE id = ?;";
+    private static final String QUERY_DELETE_BY_ID = "DELETE FROM users WHERE id = ?;";
+    private static final String QUERY_SELECT_ALL = "SELECT * FROM users;";
 
 
     public static void createUser(){
